@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Morrowplate Analysis</title>
+    <meta name="description" content="Detailed nutrition analysis and support information." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        background: #f7f2eb;
+      }
+
+      .analysis-page {
+        padding: 72px 0 96px;
+      }
+
+      .analysis-shell {
+        width: min(980px, calc(100% - 32px));
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.34);
+        border: 1px solid rgba(24, 63, 52, 0.1);
+        border-radius: 32px;
+        padding: 40px clamp(20px, 4vw, 52px);
+        box-shadow: 0 18px 36px rgba(24, 63, 52, 0.04);
+      }
+
+      .analysis-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 22px;
+      }
+
+      .analysis-eyebrow {
+        margin: 0;
+        color: var(--accent);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--accent-dark);
+        font-weight: 700;
+      }
+
+      .analysis-title {
+        margin: 0 0 18px;
+        font-size: clamp(3rem, 6vw, 5rem);
+        line-height: 0.88;
+      }
+
+      .analysis-intro {
+        margin: 0 0 28px;
+        font-size: 1.08rem;
+        color: var(--text-soft);
+        max-width: 800px;
+        line-height: 1.75;
+      }
+
+      .analysis-sections {
+        display: grid;
+        gap: 26px;
+      }
+
+      .analysis-block {
+        border-top: 1px solid rgba(24, 63, 52, 0.12);
+        padding-top: 20px;
+      }
+
+      .analysis-block h3 {
+        margin-bottom: 12px;
+      }
+
+      .analysis-block p,
+      .analysis-block li {
+        color: var(--text-soft);
+        line-height: 1.75;
+        font-size: 1.02rem;
+      }
+
+      .analysis-block ul {
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      .cta-row {
+        margin-top: 32px;
+      }
+
+      @media (max-width: 640px) {
+        .analysis-top {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Morrowplate home">
+          <span class="brand-mark">M</span>
+          <span>Morrowplate</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html#approach">Our approach</a>
+          <a href="index.html#care">Nutrition care</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Get in touch</a>
+          <a href="staff.html">Staff workspace</a>
+        </nav>
+
+        <a class="button button-primary nav-cta" href="mailto:morrowplate-3@polsia.app?subject=Nutrition%20support">
+          Ask about a consultation
+        </a>
+      </div>
+    </header>
+
+    <main class="analysis-page">
+      <div class="analysis-shell">
+        <div class="analysis-top">
+          <p class="analysis-eyebrow">Nutrition analysis</p>
+          <a class="back-link" href="index.html">← Back to overview</a>
+        </div>
+
+        <h1 class="analysis-title" id="analysis-title">Healthy weight, at your pace</h1>
+        <p class="analysis-intro" id="analysis-intro">
+          Build steady, nourishing habits around your needs, routines and relationship with food.
+        </p>
+
+        <div class="analysis-sections" id="analysis-content"></div>
+
+        <div class="cta-row">
+          <a class="button button-primary" href="mailto:morrowplate-3@polsia.app?subject=Healthy%20weight%20support">
+            Ask about this support
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const contentMap = {
+        'healthy-weight': {
+          title: 'Healthy weight, at your pace',
+          intro: 'Build steady, nourishing habits around your needs, routines and relationship with food.',
+          subject: 'Healthy%20weight%20support',
+          blocks: [
+            {
+              heading: 'What this support looks like',
+              text: 'This type of care focuses on sustainable habits, not perfection. We look at your current routines, stress, sleep, meal patterns and the things that make nutrition feel realistic in everyday life.'
+            },
+            {
+              heading: 'Common goals',
+              list: [
+                'Create a more steady relationship with food and eating patterns',
+                'Find small routines that support weight goals without overwhelm',
+                'Build food choices around energy, satisfaction and long-term health'
+              ]
+            },
+            {
+              heading: 'How we work',
+              text: 'We assess your current habits, review what is working and what is getting in the way, and build a plan that fits your real life rather than a rigid ideal.'
+            }
+          ]
+        },
+        'health-changes': {
+          title: 'Nutrition through health changes',
+          intro: 'Get nutrition guidance for diet-related conditions, with clinical oversight and referral when needed.',
+          subject: 'Nutrition%20through%20health%20changes',
+          blocks: [
+            {
+              heading: 'When this support is useful',
+              text: 'This work is helpful when nutrition needs change due to a diagnosis, medication, metabolic changes, digestive concerns or a shift in health priorities.'
+            },
+            {
+              heading: 'What is addressed',
+              list: [
+                'Dietary management for metabolic or chronic health conditions',
+                'Understanding the nutrition side of treatment and recovery',
+                'Planning practical meals around symptoms, routines and lifestyle'
+              ]
+            },
+            {
+              heading: 'Clinical approach',
+              text: 'When needed, support can be coordinated with a clinical team to help ensure safe, well-rounded care.'
+            }
+          ]
+        },
+        'mothers-little-ones': {
+          title: 'Care for mothers & little ones',
+          intro: 'Practical support for pregnancy, breastfeeding and feeding children as they grow.',
+          subject: 'Care%20for%20mothers%20and%20little%20ones',
+          blocks: [
+            {
+              heading: 'Support for changing nutrition needs',
+              text: 'This area includes guidance around pregnancy, postpartum recovery, breastfeeding, toddler nutrition and family routines that support healthy growth.'
+            },
+            {
+              heading: 'Typical priorities',
+              list: [
+                'Meal planning during pregnancy and breastfeeding',
+                'Balancing family food needs with your own recovery',
+                'Supporting children with practical, sustainable eating routines'
+              ]
+            },
+            {
+              heading: 'A calming, realistic approach',
+              text: 'We focus on simple, nourishing habits that fit your household, not perfection or pressure.'
+            }
+          ]
+        },
+        'selected-results': {
+          title: 'Make sense of selected results',
+          intro: 'Understand selected blood test results from a nutrition perspective, with appropriate clinical follow-up.',
+          subject: 'Selected%20results%20support',
+          blocks: [
+            {
+              heading: 'Why this matters',
+              text: 'Some results can be confusing when they are explained without context. We help translate them into practical, understandable guidance connected to daily dietary choices.'
+            },
+            {
+              heading: 'What we look at',
+              list: [
+                'How a result may relate to food, nutrient intake or eating patterns',
+                'Areas where diet may support symptom management or recovery',
+                'When referral or clinical review is the right next step'
+              ]
+            },
+            {
+              heading: 'How care is guided',
+              text: 'This support is educational and practical, while staying within the right clinical boundaries and referral pathways.'
+            }
+          ]
+        }
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get('slug') || 'healthy-weight';
+      const entry = contentMap[slug] || contentMap['healthy-weight'];
+
+      document.title = `${entry.title} | Morrowplate`;
+      document.getElementById('analysis-title').textContent = entry.title;
+      document.getElementById('analysis-intro').textContent = entry.intro;
+
+      const contentWrap = document.getElementById('analysis-content');
+      contentWrap.innerHTML = entry.blocks.map((block) => {
+        let body = block.text ? `<p>${block.text}</p>` : '';
+        if (block.list) {
+          body += `<ul>${block.list.map(item => `<li>${item}</li>`).join('')}</ul>`;
+        }
+        return `
+          <div class="analysis-block">
+            <h3>${block.heading}</h3>
+            ${body}
+          </div>
+        `;
+      }).join('');
+
+      const ctaLink = document.querySelector('.cta-row a');
+      ctaLink.href = `mailto:morrowplate-3@polsia.app?subject=${entry.subject}`;
+    </script>
+  </body>
+</html>

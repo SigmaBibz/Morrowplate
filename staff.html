@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Morrowplate Staff Workspace</title>
+    <meta
+      name="description"
+      content="Staff workspace for managing Morrowplate sessions, availability and service settings."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        margin: 0;
+        background: #f2efe8;
+        color: #183f34;
+        font-family: "DM Sans", sans-serif;
+      }
+
+      .staff-shell {
+        display: flex;
+        min-height: 100vh;
+      }
+
+      .sidebar {
+        width: 255px;
+        background: rgba(255,255,255,0.08);
+        border-right: 1px solid rgba(24, 63, 52, 0.14);
+        padding: 18px 14px 20px;
+      }
+
+      .brand-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 28px;
+      }
+
+      .brand-name {
+        font-size: 1.02rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .brand-mark {
+        width: 18px;
+        height: 18px;
+        border: 1px solid rgba(24, 63, 52, 0.8);
+        border-radius: 5px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.7rem;
+      }
+
+      .mini-btn {
+        border: 1px solid rgba(24, 63, 52, 0.3);
+        background: transparent;
+        border-radius: 6px;
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+        color: #183f34;
+        cursor: pointer;
+      }
+
+      .nav {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 12px;
+        border-radius: 8px;
+        color: #183f34;
+        text-decoration: none;
+        opacity: 0.85;
+      }
+
+      .nav-link.active {
+        background: rgba(24, 63, 52, 0.06);
+        font-weight: 700;
+      }
+
+      .nav-link .icon {
+        font-size: 1rem;
+      }
+
+      .content {
+        flex: 1;
+        padding: 20px 36px 40px;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 14px;
+        min-height: 54px;
+      }
+
+      .signed-in {
+        font-size: 0.82rem;
+        color: rgba(24, 63, 52, 0.8);
+        line-height: 1.4;
+      }
+
+      .signed-in strong {
+        font-weight: 700;
+      }
+
+      .top-actions {
+        display: flex;
+        gap: 10px;
+      }
+
+      .action-btn {
+        border: 1px solid rgba(24, 63, 52, 0.3);
+        background: transparent;
+        color: #183f34;
+        border-radius: 6px;
+        padding: 0.65rem 1rem;
+        font-size: 0.85rem;
+        cursor: pointer;
+      }
+
+      .workspace-panel {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding-top: 12px;
+      }
+
+      .workspace-head {
+        padding-top: 18px;
+      }
+
+      .workspace-label {
+        display: inline-block;
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #183f34;
+        opacity: 0.76;
+        margin-bottom: 10px;
+      }
+
+      .workspace-title {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(3rem, 3.5vw, 4.2rem);
+        line-height: 0.9;
+        letter-spacing: -0.04em;
+        margin: 0 0 12px;
+      }
+
+      .workspace-subtitle {
+        margin: 0;
+        font-size: 1.05rem;
+        color: rgba(24, 63, 52, 0.72);
+        max-width: 940px;
+      }
+
+      .tool-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 32px;
+      }
+
+      .tool-card {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(24, 63, 52, 0.12);
+        border-radius: 12px;
+        min-height: 225px;
+        padding: 20px 18px 18px;
+      }
+
+      .tool-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        background: rgba(24, 63, 52, 0.06);
+        margin-bottom: 18px;
+      }
+
+      .tool-card h3 {
+        margin: 0 0 12px;
+        font-size: clamp(2rem, 2vw, 2.4rem);
+        font-family: "Cormorant Garamond", Georgia, serif;
+      }
+
+      .tool-card p {
+        color: rgba(24, 63, 52, 0.75);
+        margin: 0 0 18px;
+        line-height: 1.6;
+      }
+
+      .tool-link {
+        color: #183f34;
+        font-weight: 700;
+        text-decoration: underline;
+      }
+
+      .notice {
+        margin-top: 28px;
+        border: 1px solid rgba(24, 63, 52, 0.15);
+        border-radius: 12px;
+        background: rgba(255,255,255,0.08);
+        padding: 18px 20px;
+        color: rgba(24, 63, 52, 0.8);
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 900px) {
+        .staff-shell {
+          flex-direction: column;
+        }
+
+        .sidebar {
+          width: 100%;
+          border-right: none;
+          border-bottom: 1px solid rgba(24, 63, 52, 0.12);
+        }
+
+        .tool-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="staff-shell">
+      <aside class="sidebar">
+        <div class="brand-row">
+          <div class="brand-name">
+            <span class="brand-mark">M</span>
+            <span>Morrowplate</span>
+          </div>
+          <a class="mini-btn" href="index.html" aria-label="View the public site">View site</a>
+        </div>
+
+        <nav class="nav" aria-label="Staff navigation">
+          <a class="nav-link active" href="staff.html"><span class="icon">◫</span> Overview</a>
+          <a class="nav-link" href="sessions.html"><span class="icon">▣</span> Sessions</a>
+          <a class="nav-link" href="availability.html"><span class="icon">◔</span> Availability</a>
+          <a class="nav-link" href="booking-terms.html"><span class="icon">▤</span> Booking terms</a>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div class="signed-in">
+            <strong>Signed in as</strong><br />
+            phoenixnhealtha@proton.me
+          </div>
+          <div class="top-actions">
+            <a class="action-btn" href="index.html">View site</a>
+            <button class="action-btn" type="button">Sign out</button>
+          </div>
+        </header>
+
+        <section class="workspace-panel">
+          <div class="workspace-head">
+            <span class="workspace-label">Admin access</span>
+            <h1 class="workspace-title">Staff workspace</h1>
+            <p class="workspace-subtitle">
+              Maintain the consultation offers and practice settings that feed Morrowplate’s public information.
+            </p>
+          </div>
+
+          <div class="tool-grid">
+            <article class="tool-card">
+              <div class="tool-icon">▣</div>
+              <h3>Sessions</h3>
+              <p>Edit the consultation offer, add sessions, and control which offers are public.</p>
+              <a class="tool-link" href="#">Open settings</a>
+            </article>
+
+            <article class="tool-card">
+              <div class="tool-icon">◔</div>
+              <h3>Availability</h3>
+              <p>Set weekly hours, split ranges, dated time off, notice, and booking horizon.</p>
+              <a class="tool-link" href="#">Open settings</a>
+            </article>
+
+            <article class="tool-card">
+              <div class="tool-icon">▤</div>
+              <h3>Booking terms</h3>
+              <p>Save cancellation, rescheduling, refund, reminder, and preparation rules.</p>
+              <a class="tool-link" href="#">Open settings</a>
+            </article>
+          </div>
+
+          <div class="notice">
+            This workspace stores offers and practice-wide hours. Practitioner calendars, appointment holds,
+            confirmation, and message delivery are not connected.
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

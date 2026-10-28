@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sessions | Morrowplate Staff</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body { background: #f5f2ea; }
+      .staff-detail-page { padding: 56px 0 100px; }
+      .detail-shell {
+        width: min(1100px, calc(100% - 32px));
+        margin: 0 auto;
+        background: rgba(255,255,255,0.34);
+        border: 1px solid rgba(24,63,52,0.12);
+        border-radius: 28px;
+        padding: 28px 28px 40px;
+      }
+      .detail-header { display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:24px; }
+      .detail-title { font-size: clamp(2.6rem, 5vw, 4.3rem); margin:0; }
+      .tag { display:inline-block; background: rgba(185,98,67,0.1); color:#183f34; padding: 0.45rem 0.8rem; border-radius:999px; letter-spacing:0.08em; font-weight:700; text-transform:uppercase; font-size:0.7rem; }
+      .detail-grid { display:grid; grid-template-columns: 1.15fr 0.85fr; gap:24px; }
+      .panel { background: rgba(255,255,255,0.25); border:1px solid rgba(24,63,52,0.1); border-radius:20px; padding:20px 22px; }
+      .panel h3 { margin:0 0 14px; font-size:2rem; }
+      .panel p, .panel li { color: rgba(24,63,52,0.75); line-height:1.7; }
+      .panel ul { padding-left:18px; margin:0; }
+      .meta-list { display:grid; gap:12px; }
+      .meta-item { display:flex; justify-content:space-between; gap:12px; border-bottom:1px solid rgba(24,63,52,0.08); padding-bottom:10px; }
+      .meta-item span:first-child { color: rgba(24,63,52,0.7); }
+      .meta-item span:last-child { font-weight:700; }
+      @media (max-width: 780px){ .detail-grid { grid-template-columns:1fr; } .detail-header { flex-direction: column; align-items:flex-start; } }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Morrowplate home"><span class="brand-mark">M</span><span>Morrowplate</span></a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html#approach">Our approach</a>
+          <a href="index.html#care">Nutrition care</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Get in touch</a>
+          <a href="staff.html">Staff workspace</a>
+        </nav>
+        <a class="button button-primary nav-cta" href="index.html">Back to public site</a>
+      </div>
+    </header>
+
+    <main class="staff-detail-page">
+      <div class="detail-shell">
+        <div class="detail-header">
+          <span class="tag">Sessions</span>
+          <a class="back-link" href="staff.html">← Back to staff workspace</a>
+        </div>
+        <h1 class="detail-title">Session management</h1>
+
+        <div class="detail-grid">
+          <section class="panel">
+            <h3>What this controls</h3>
+            <p>Manage which consultation offers are published, how they are described, and which services appear on the public site.</p>
+            <ul>
+              <li>Update consultation titles and short descriptions</li>
+              <li>Choose whether service types are visible publicly</li>
+              <li>Adjust packages and pricing ranges that are shown to clients</li>
+            </ul>
+          </section>
+
+          <aside class="panel">
+            <h3>Quick details</h3>
+            <div class="meta-list">
+              <div class="meta-item"><span>Status</span><span>Draft</span></div>
+              <div class="meta-item"><span>Offer type</span><span>Consultations</span></div>
+              <div class="meta-item"><span>Visibility</span><span>Published</span></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

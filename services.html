@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | Morrowplate</title>
+    <meta
+      name="description"
+      content="Explore Morrowplate services: digital nutrition products, clinical support, and consultations."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body { background: #f7f2ea; }
+      .services-page { padding: 76px 0 100px; }
+      .services-shell { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+      .services-intro { margin-bottom: 32px; }
+      .services-intro h1 { margin:0; font-size: clamp(3.5rem, 7vw, 6rem); }
+      .services-intro p { max-width: 760px; margin-top: 14px; color: rgba(24,63,52,0.75); font-size: 1.08rem; }
+      .service-layout { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+      .service-box { background: rgba(255,255,255,0.32); border:1px solid rgba(24,63,52,0.1); border-radius: 28px; padding: 26px 22px; }
+      .service-box h2 { margin:0 0 10px; font-size: clamp(2.5rem, 4vw, 3.4rem); }
+      .service-box p { color: rgba(24,63,52,0.76); }
+      .service-box ul { margin: 18px 0 0; padding-left: 18px; line-height: 1.9; color: rgba(24,63,52,0.8); }
+      .pill { display:inline-block; background: rgba(185,98,67,0.1); color:#183f34; border-radius:999px; padding: 0.42rem 0.75rem; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:700; margin-bottom: 12px; }
+      .cta-row { margin-top: 28px; display:flex; gap:16px; flex-wrap: wrap; }
+      @media (max-width: 860px){ .service-layout { grid-template-columns:1fr; } }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Morrowplate home">
+          <span class="brand-mark">M</span>
+          <span>Morrowplate</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html#approach">Our approach</a>
+          <a href="services.html">Services</a>
+          <a href="index.html#care">Nutrition care</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Get in touch</a>
+          <a href="staff.html">Staff workspace</a>
+        </nav>
+
+        <a class="button button-primary nav-cta" href="https://calendly.com/morrowplate/consultation" target="_blank" rel="noreferrer">
+          Book a consultation
+        </a>
+      </div>
+    </header>
+
+    <main class="services-page">
+      <div class="services-shell">
+        <div class="services-intro">
+          <p class="eyebrow alt">Support that fits real life</p>
+          <h1>Services</h1>
+          <p>
+            Whether you need structured self-service support or a one-to-one consultation with a nutrition professional,
+            Morrowplate offers care that can feel practical, flexible, and grounded in everyday life.
+          </p>
+        </div>
+
+        <div class="service-layout">
+          <article class="service-box">
+            <span class="pill">Self-service</span>
+            <h2>Digital nutrition tools</h2>
+            <p>Affordable, flexible support designed for people who want clear guidance without a full in-depth consultation.</p>
+            <ul>
+              <li>BMI and basic nutrition check-in</li>
+              <li>Dietary recall report</li>
+              <li>Meal planner support</li>
+              <li>Helpful tools that can work on your own schedule</li>
+            </ul>
+          </article>
+
+          <article class="service-box">
+            <span class="pill">Professional</span>
+            <h2>Consultations</h2>
+            <p>One-to-one nutrition care for deeper guidance, more complex health needs, and ongoing accountability.</p>
+            <ul>
+              <li>Initial consultation</li>
+              <li>Follow-up support</li>
+              <li>Multi-session packages</li>
+              <li>Clinical referrals and practical next steps</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="cta-row">
+          <a class="button button-primary" href="https://calendly.com/morrowplate/consultation" target="_blank" rel="noreferrer">Book a consultation</a>
+          <a class="button button-secondary" href="index.html#care">See care categories</a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
