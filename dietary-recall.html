@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dietary Recall | Morrowplate</title>
+    <meta name="description" content="A 24-hour dietary recall questionnaire for nutrition intake assessment." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body { background:#f7f2ea; }
+      .page-shell { width:min(1200px, calc(100% - 28px)); margin:0 auto; padding:72px 0 100px; }
+      .hero-box { background: rgba(255,255,255,0.35); border:1px solid rgba(24,63,52,0.09); border-radius:28px; padding:28px; margin-bottom:22px; }
+      .hero-box h1 { font-size: clamp(3rem, 6vw, 5rem); margin:0 0 12px; }
+      .hero-box p { color: rgba(24,63,52,0.72); max-width: 780px; }
+      .recall-wrap { display:grid; grid-template-columns: 1.6fr 0.8fr; gap: 20px; }
+      .form-panel, .guide-panel { background: rgba(255,255,255,0.32); border:1px solid rgba(24,63,52,0.09); border-radius:24px; padding: 22px; }
+      .form-panel h2, .guide-panel h3 { margin-top:0; }
+      .field { display:flex; flex-direction:column; gap:8px; margin-bottom:14px; }
+      .field label { font-weight:700; color:#183f34; }
+      .field input, .field select, .field textarea { width:100%; border:1px solid rgba(24,63,52,0.12); border-radius:12px; background:rgba(255,255,255,0.45); padding:0.8rem 0.9rem; font:inherit; }
+      .two-col { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px; }
+      .radio-row { display:flex; gap:18px; align-items:center; flex-wrap:wrap; padding-top: 10px; }
+      .radio-row label { display:flex; align-items:center; gap:8px; }
+      .meal-box { background: rgba(185,98,67,0.04); border:1px solid rgba(185,98,67,0.12); border-radius:16px; padding:16px; margin: 14px 0 18px; }
+      .checklist { display:flex; flex-direction:column; gap:10px; margin-top: 8px; }
+      .checklist label { display:flex; align-items:flex-start; gap:10px; color: rgba(24,63,52,0.76); }
+      .guide-panel ul { padding-left:18px; color: rgba(24,63,52,0.76); line-height:1.8; }
+      .guide-panel h4 { margin: 16px 0 8px; font-family: 'DM Sans', sans-serif; }
+      @media (max-width: 900px){ .recall-wrap { grid-template-columns:1fr; } .two-col { grid-template-columns:1fr; } }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Morrowplate home">
+          <span class="brand-mark">M</span>
+          <span>Morrowplate</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html#approach">Our approach</a>
+          <a href="services.html">Services</a>
+          <a href="index.html#care">Nutrition care</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Get in touch</a>
+        </nav>
+        <a class="button button-primary nav-cta" href="https://calendly.com/morrowplate/consultation" target="_blank" rel="noreferrer">Book a consultation</a>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero-box">
+        <p class="eyebrow alt">Assessment tool</p>
+        <h1>24-Hour Dietary Recall Questionnaire</h1>
+        <p>
+          This is a structured intake form designed to capture what was eaten and drunk in the last 24 hours,
+          helping uncover patterns, habitual gaps, and nutrition needs in a practical way.
+        </p>
+      </section>
+
+      <div class="recall-wrap">
+        <form class="form-panel">
+          <h2>Section 1: Session information</h2>
+
+          <div class="two-col">
+            <div class="field">
+              <label for="participantId">Participant name / ID</label>
+              <input id="participantId" type="text" placeholder="e.g. Jane M." />
+            </div>
+            <div class="field">
+              <label for="recallDate">Date of recall</label>
+              <input id="recallDate" type="date" />
+            </div>
+          </div>
+
+          <div class="two-col">
+            <div class="field">
+              <label for="dayOfWeek">Day of the week</label>
+              <select id="dayOfWeek">
+                <option>Monday</option>
+                <option>Tuesday</option>
+                <option>Wednesday</option>
+                <option>Thursday</option>
+                <option>Friday</option>
+                <option>Saturday</option>
+                <option>Sunday</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Was yesterday a typical day?</label>
+              <div class="radio-row">
+                <label><input type="radio" name="typicalDay" checked /> Yes</label>
+                <label><input type="radio" name="typicalDay" /> No</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="typicalReasons">If no, explain</label>
+            <textarea id="typicalReasons" rows="3" placeholder="Illness, travel, fasting, holiday, wedding, etc."></textarea>
+          </div>
+
+          <h2>Section 2: Quick food list</h2>
+          <div class="field">
+            <label for="foodList">List everything you ate and drank yesterday</label>
+            <textarea id="foodList" rows="5" placeholder="From the moment you woke up until you went to sleep"></textarea>
+          </div>
+
+          <h2>Section 3: Detailed meal log</h2>
+          <div class="meal-box">
+            <div class="two-col">
+              <div class="field">
+                <label>Approximate time</label>
+                <input type="time" />
+              </div>
+              <div class="field">
+                <label>Occasion type</label>
+                <select>
+                  <option>Breakfast</option>
+                  <option>Morning Snack</option>
+                  <option>Lunch</option>
+                  <option>Afternoon Snack</option>
+                  <option>Dinner</option>
+                  <option>Evening Snack</option>
+                  <option>Water / Beverage Only</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Food / beverage description</label>
+              <input type="text" placeholder="Brand, ingredient, milk type, cut of meat, etc." />
+            </div>
+
+            <div class="field">
+              <label>Preparation method</label>
+              <input type="text" placeholder="Fried, baked, boiled, raw, roasted, grilled" />
+            </div>
+
+            <div class="two-col">
+              <div class="field">
+                <label>Amount consumed</label>
+                <input type="text" placeholder="e.g. 1.5" />
+              </div>
+              <div class="field">
+                <label>Unit</label>
+                <select>
+                  <option>Cups</option>
+                  <option>Slices</option>
+                  <option>Pieces</option>
+                  <option>Tablespoons</option>
+                  <option>Teaspoons</option>
+                  <option>Ounces</option>
+                  <option>Grams</option>
+                  <option>Milliliters</option>
+                  <option>Hand / Object Reference</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <button class="button button-secondary" type="button">+ Add eating occasion</button>
+
+          <h2>Section 4: Forgotten foods checklist</h2>
+          <div class="checklist">
+            <label><input type="checkbox" /> Beverages: water, soda, fruit juice, sports drinks, energy drinks</label>
+            <label><input type="checkbox" /> Hot drinks: coffee or tea with milk, sugar, creamer or honey</label>
+            <label><input type="checkbox" /> Alcohol: beer, wine, spirits or mixed drinks</label>
+            <label><input type="checkbox" /> Additions: butter, margarine, oil, salad dressing, ketchup, mayo, gravy</label>
+            <label><input type="checkbox" /> Snacks or nibbles: nuts, candy, chips, taste-testing while cooking</label>
+            <label><input type="checkbox" /> Supplements: protein powder, vitamins, minerals, fish oil or herbs</label>
+          </div>
+
+          <div class="cta-row" style="margin-top: 20px;">
+            <button class="button button-primary" type="submit">Submit recall</button>
+          </div>
+        </form>
+
+        <aside class="guide-panel">
+          <h3>Portion-size guide</h3>
+
+          <h4>Hand-size estimates</h4>
+          <ul>
+            <li>Palm of your hand = 3 oz of meat, poultry or fish</li>
+            <li>Your fist = 1 cup cereal, rice, pasta or vegetables</li>
+            <li>Cupped hand = 1/2 cup beans or chopped fruit</li>
+            <li>Thumb = 1 tbsp dressing or cream cheese</li>
+            <li>Thumb tip = 1 tsp butter or sugar</li>
+          </ul>
+
+          <h4>Household object estimates</h4>
+          <ul>
+            <li>Deck of cards = 3 oz meat or tofu</li>
+            <li>Tennis ball = 1/2 cup fruit or vegetables</li>
+            <li>Baseball = 1 cup salad greens or cereal</li>
+            <li>Golf ball = 2 tbsp peanut butter</li>
+            <li>Four dice = 1 oz hard cheese</li>
+          </ul>
+        </aside>
+      </div>
+    </main>
+
+    <script>
+      const recallDate = document.getElementById('recallDate');
+      if (recallDate) {
+        const yesterday = new Date();
+        yesterday.setDate(yesterday.getDate() - 1);
+        recallDate.value = yesterday.toISOString().split('T')[0];
+      }
+    </script>
+  </body>
+</html>

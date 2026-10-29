@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Started | Morrowplate</title>
+    <meta name="description" content="Start your nutrition plan with Morrowplate by choosing your support path." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body { background: #f7f2ea; }
+      .start-page { padding: 72px 0 100px; }
+      .shell { width: min(1100px, calc(100% - 28px)); margin: 0 auto; }
+      .start-hero { margin-bottom: 24px; }
+      .start-hero h1 { font-size: clamp(3.2rem, 6vw, 5.4rem); margin: 0 0 12px; }
+      .start-hero p { max-width: 760px; color: rgba(24,63,52,0.72); }
+      .start-grid { display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 22px; }
+      .panel { background: rgba(255,255,255,0.32); border:1px solid rgba(24,63,52,0.08); border-radius:28px; padding:24px; }
+      .option-list { display:grid; gap: 14px; }
+      .option { border:1px solid rgba(24,63,52,0.08); border-radius:18px; padding: 18px; background: rgba(255,255,255,0.26); }
+      .option.selected { border-color: rgba(24,63,52,0.2); background: rgba(185,98,67,0.06); }
+      .option h3 { margin:0 0 10px; }
+      .option p { margin:0 0 12px; color: rgba(24,63,52,0.72); }
+      .tag { display:inline-block; background: rgba(24,63,52,0.05); border-radius:999px; padding: 0.38rem 0.7rem; font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; }
+      .lead-form { display:grid; gap: 14px; }
+      .field { display:flex; flex-direction:column; gap:8px; }
+      .field label { font-weight:700; color:#183f34; }
+      .field input, .field select, .field textarea { width:100%; border:1px solid rgba(24,63,52,0.12); border-radius: 12px; background: rgba(255,255,255,0.45); padding: 0.8rem 0.9rem; font: inherit; }
+      .summary-box { background: rgba(24,63,52,0.04); border:1px solid rgba(24,63,52,0.08); border-radius:20px; padding: 18px; }
+      .summary-box ul { margin: 12px 0 0; padding-left: 18px; line-height: 1.8; color: rgba(24,63,52,0.75); }
+      @media (max-width: 900px){ .start-grid { grid-template-columns:1fr; } }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Morrowplate home">
+          <span class="brand-mark">M</span>
+          <span>Morrowplate</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html#approach">Our approach</a>
+          <a href="services.html">Services</a>
+          <a href="index.html#care">Nutrition care</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Get in touch</a>
+        </nav>
+        <a class="button button-primary nav-cta" href="https://calendly.com/morrowplate/consultation" target="_blank" rel="noreferrer">Book a consultation</a>
+      </div>
+    </header>
+
+    <main class="start-page">
+      <div class="shell">
+        <section class="start-hero">
+          <p class="eyebrow alt">Start here</p>
+          <h1>Choose the support that feels right for you.</h1>
+          <p>
+            Begin with a self-check or speak with a nutrition professional. This is the easiest way to find the right next step.
+          </p>
+        </section>
+
+        <div class="start-grid">
+          <div class="panel">
+            <div class="option-list">
+              <div class="option selected">
+                <span class="tag">Starter</span>
+                <h3>Free BMI check</h3>
+                <p>Quick self-assessment for a general sense of where you are.</p>
+                <a class="button button-secondary" href="bmi-calculator.html">Open calculator</a>
+              </div>
+
+              <div class="option">
+                <span class="tag">Essential</span>
+                <h3>Nutrition insight bundle</h3>
+                <p>Dietary recall + meal planning snapshot for practical next steps.</p>
+                <a class="button button-secondary" href="services.html">Explore bundle</a>
+              </div>
+
+              <div class="option">
+                <span class="tag">Guided</span>
+                <h3>Professional consultation</h3>
+                <p>For deeper guidance, personalised strategy and accountability.</p>
+                <a class="button button-secondary" href="https://calendly.com/morrowplate/consultation" target="_blank" rel="noreferrer">Book a session</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <form class="lead-form" action="#" method="post">
+              <h2 style="margin-bottom: 8px;">Tell us a little about you</h2>
+
+              <div class="field">
+                <label for="name">Full name</label>
+                <input id="name" type="text" placeholder="Your name" />
+              </div>
+
+              <div class="field">
+                <label for="email">Email address</label>
+                <input id="email" type="email" placeholder="you@example.com" />
+              </div>
+
+              <div class="field">
+                <label for="goal">What are you looking for?</label>
+                <select id="goal">
+                  <option>General wellness</option>
+                  <option>Weight management</option>
+                  <option>Meal planning support</option>
+                  <option>Health condition guidance</option>
+                  <option>Professional consultation</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="message">Tell us a little more</label>
+                <textarea id="message" rows="5" placeholder="Share your goals, challenges, or what you’d love support with."></textarea>
+              </div>
+
+              <button class="button button-primary" type="submit">Send my request</button>
+            </form>
+
+            <div class="summary-box" style="margin-top: 18px;">
+              <strong>What happens next?</strong>
+              <ul>
+                <li>We review your request</li>
+                <li>We suggest the best support path</li>
+                <li>You get a clear next step</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

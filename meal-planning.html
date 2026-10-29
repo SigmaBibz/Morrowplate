@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meal Planning | Morrowplate</title>
+    <meta name="description" content="A realistic meal planning tool designed around routine, budget and healthy choices." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body { background:#f7f2ea; }
+      .page-shell { width:min(1100px, calc(100% - 28px)); margin:0 auto; padding:72px 0 100px; }
+      .topbar { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px; }
+      .pill { display:inline-flex; align-items:center; border-radius:999px; background:rgba(185,98,67,0.1); color:#183f34; padding:0.45rem 0.8rem; font-size:0.7rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; }
+      .hero-panel { background: rgba(255,255,255,0.35); border:1px solid rgba(24,63,52,0.1); border-radius:32px; padding:32px; }
+      .hero-panel h1 { font-size: clamp(3.2rem, 6vw, 5.6rem); margin:0 0 14px; }
+      .hero-panel p { color: rgba(24,63,52,0.74); font-size: 1.08rem; max-width:760px; }
+      .plan-grid { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:20px; margin-top:26px; }
+      .day-card { background: rgba(255,255,255,0.3); border:1px solid rgba(24,63,52,0.08); border-radius:22px; padding:20px; }
+      .day-card h3 { margin:0 0 10px; }
+      .day-card p { margin: 7px 0; color: rgba(24,63,52,0.74); }
+      .summary-box { margin-top:24px; background: rgba(24,63,52,0.04); border:1px solid rgba(24,63,52,0.08); border-radius:22px; padding:20px; }
+      .summary-box ul { margin: 12px 0 0; padding-left: 18px; line-height: 1.8; color: rgba(24,63,52,0.75); }
+      @media (max-width: 760px){ .plan-grid{grid-template-columns:1fr;} }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Morrowplate home">
+          <span class="brand-mark">M</span>
+          <span>Morrowplate</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html#approach">Our approach</a>
+          <a href="services.html">Services</a>
+          <a href="index.html#care">Nutrition care</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Get in touch</a>
+        </nav>
+        <a class="button button-primary nav-cta" href="https://calendly.com/morrowplate/consultation" target="_blank" rel="noreferrer">Book a consultation</a>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <div class="topbar">
+        <span class="pill">Digital nutrition product</span>
+      </div>
+
+      <section class="hero-panel">
+        <p class="eyebrow alt">Meal planning snapshot</p>
+        <h1>Simple meal planning that fits real life.</h1>
+        <p>
+          A realistic, affordable eating rhythm built around convenience, nutrition needs, and familiar foods.
+          This snapshot helps create structure without rigid perfection.
+        </p>
+      </section>
+
+      <div class="plan-grid">
+        <article class="day-card">
+          <h3>Monday</h3>
+          <p><strong>Breakfast:</strong> Oats with banana and peanut butter</p>
+          <p><strong>Lunch:</strong> Chicken wrap with greens and avocado</p>
+          <p><strong>Dinner:</strong> Beef stew with rice and greens</p>
+        </article>
+
+        <article class="day-card">
+          <h3>Tuesday</h3>
+          <p><strong>Breakfast:</strong> Egg toast and a piece of fruit</p>
+          <p><strong>Lunch:</strong> Lentil soup with wholegrain bread</p>
+          <p><strong>Dinner:</strong> Fish, potatoes and roasted vegetables</p>
+        </article>
+
+        <article class="day-card">
+          <h3>Wednesday</h3>
+          <p><strong>Breakfast:</strong> Greek yogurt with berries</p>
+          <p><strong>Lunch:</strong> Chicken salad bowl with beans</p>
+          <p><strong>Dinner:</strong> Chickpea curry with rice</p>
+        </article>
+
+        <article class="day-card">
+          <h3>Thursday</h3>
+          <p><strong>Breakfast:</strong> Smoothie with fruit and oats</p>
+          <p><strong>Lunch:</strong> Leftover rice bowl with greens</p>
+          <p><strong>Dinner:</strong> Stir-fry chicken with vegetables</p>
+        </article>
+      </div>
+
+      <div class="summary-box">
+        <p class="eyebrow alt">What this plan supports</p>
+        <ul>
+          <li>Balanced meals without demanding perfection</li>
+          <li>Affordability through a repeatable grocery rhythm</li>
+          <li>Family-friendly routines and leftovers</li>
+          <li>Flexibility if appetite, schedule or budget changes</li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
