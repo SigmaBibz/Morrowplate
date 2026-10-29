@@ -30,6 +30,13 @@
       .guide-panel ul { padding-left:18px; color: rgba(24,63,52,0.76); line-height:1.8; }
       .guide-panel h4 { margin: 16px 0 8px; font-family: 'DM Sans', sans-serif; }
       @media (max-width: 900px){ .recall-wrap { grid-template-columns:1fr; } .two-col { grid-template-columns:1fr; } }
+      @media print {
+        .site-header, .guide-panel, #printRecall { display: none !important; }
+        body, .page-shell, .hero-box, .form-panel { background: #fff; }
+        .page-shell { width: 100%; padding: 0; }
+        .hero-box, .form-panel { border: 0; padding: 0; }
+        input, select, textarea { color: #000; }
+      }
     </style>
   </head>
   <body>
@@ -58,10 +65,11 @@
           This is a structured intake form designed to capture what was eaten and drunk in the last 24 hours,
           helping uncover patterns, habitual gaps, and nutrition needs in a practical way.
         </p>
+        <p><strong>Private worksheet:</strong> Your answers are not sent to Morrowplate; they remain on this page until you close or reload it. Use the print button to print or save a copy as a PDF. Avoid entering sensitive details on a shared device.</p>
       </section>
 
       <div class="recall-wrap">
-        <form class="form-panel">
+        <div class="form-panel">
           <h2>Section 1: Session information</h2>
 
           <div class="two-col">
@@ -174,9 +182,9 @@
           </div>
 
           <div class="cta-row" style="margin-top: 20px;">
-            <button class="button button-primary" type="submit">Submit recall</button>
+            <button class="button button-primary" id="printRecall" type="button">Print or save as PDF</button>
           </div>
-        </form>
+        </div>
 
         <aside class="guide-panel">
           <h3>Portion-size guide</h3>
@@ -207,8 +215,14 @@
       if (recallDate) {
         const yesterday = new Date();
         yesterday.setDate(yesterday.getDate() - 1);
-        recallDate.value = yesterday.toISOString().split('T')[0];
+        recallDate.value = [
+          yesterday.getFullYear(),
+          String(yesterday.getMonth() + 1).padStart(2, '0'),
+          String(yesterday.getDate()).padStart(2, '0')
+        ].join('-');
       }
+
+      document.getElementById('printRecall').addEventListener('click', () => window.print());
     </script>
   </body>
 </html>

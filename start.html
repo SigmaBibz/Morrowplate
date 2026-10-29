@@ -24,12 +24,10 @@
       .option h3 { margin:0 0 10px; }
       .option p { margin:0 0 12px; color: rgba(24,63,52,0.72); }
       .tag { display:inline-block; background: rgba(24,63,52,0.05); border-radius:999px; padding: 0.38rem 0.7rem; font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; }
-      .lead-form { display:grid; gap: 14px; }
-      .field { display:flex; flex-direction:column; gap:8px; }
-      .field label { font-weight:700; color:#183f34; }
-      .field input, .field select, .field textarea { width:100%; border:1px solid rgba(24,63,52,0.12); border-radius: 12px; background: rgba(255,255,255,0.45); padding: 0.8rem 0.9rem; font: inherit; }
+      .contact-options { display:grid; gap:14px; }
+      .contact-options p { color: rgba(24,63,52,0.72); }
       .summary-box { background: rgba(24,63,52,0.04); border:1px solid rgba(24,63,52,0.08); border-radius:20px; padding: 18px; }
-      .summary-box ul { margin: 12px 0 0; padding-left: 18px; line-height: 1.8; color: rgba(24,63,52,0.75); }
+      .summary-box p { margin: 8px 0 0; color: rgba(24,63,52,0.75); }
       @media (max-width: 900px){ .start-grid { grid-template-columns:1fr; } }
     </style>
   </head>
@@ -88,45 +86,17 @@
           </div>
 
           <div class="panel">
-            <form class="lead-form" action="#" method="post">
-              <h2 style="margin-bottom: 8px;">Tell us a little about you</h2>
-
-              <div class="field">
-                <label for="name">Full name</label>
-                <input id="name" type="text" placeholder="Your name" />
+            <div class="contact-options">
+              <h2 style="margin-bottom: 0;">Talk with Morrowplate</h2>
+              <p>Choose the next step that works for you. This site does not collect or send contact requests.</p>
+              <div class="cta-row">
+                <a class="button button-primary" href="mailto:phoenixthealpha@proton.me?subject=Morrowplate%20support%20inquiry">Email Morrowplate</a>
+                <a class="button button-secondary" href="https://calendly.com/morrowplate/consultation" target="_blank" rel="noreferrer">Book a consultation</a>
               </div>
-
-              <div class="field">
-                <label for="email">Email address</label>
-                <input id="email" type="email" placeholder="you@example.com" />
+              <div class="summary-box">
+                <strong>Contact by email</strong>
+                <p>Your email app will open a draft; it is only sent if you choose to send it. Please do not include detailed medical or other sensitive health information in an initial email.</p>
               </div>
-
-              <div class="field">
-                <label for="goal">What are you looking for?</label>
-                <select id="goal">
-                  <option>General wellness</option>
-                  <option>Weight management</option>
-                  <option>Meal planning support</option>
-                  <option>Health condition guidance</option>
-                  <option>Professional consultation</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label for="message">Tell us a little more</label>
-                <textarea id="message" rows="5" placeholder="Share your goals, challenges, or what you’d love support with."></textarea>
-              </div>
-
-              <button class="button button-primary" type="submit">Send my request</button>
-            </form>
-
-            <div class="summary-box" style="margin-top: 18px;">
-              <strong>What happens next?</strong>
-              <ul>
-                <li>We review your request</li>
-                <li>We suggest the best support path</li>
-                <li>You get a clear next step</li>
-              </ul>
             </div>
           </div>
         </div>

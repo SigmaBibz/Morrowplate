@@ -78,6 +78,11 @@
       .guide-block ul { margin:0; padding-left:17px; color: rgba(24,63,52,0.8); line-height: 1.8; }
       .small-button { padding: 0.7rem 1rem; }
       @media (max-width: 860px){ .service-layout { grid-template-columns:1fr; } .product-card, .recall-layout, .meal-plan-grid, .two-col, .three-col { grid-template-columns:1fr; } }
+      @media print {
+        .site-header, .services-intro, .offer-strip, .tab-buttons, .service-layout, .portion-guide, #printRecallPreview { display: none !important; }
+        .tab-panel:not(.active) { display: none !important; }
+        body, .services-page, .services-shell, .product-card, .recall-form { background: #fff; }
+      }
     </style>
   </head>
   <body>
@@ -110,7 +115,8 @@
           <h1>Digital nutrition products</h1>
           <p>
             Structured digital tools designed for nutrition assessment, meal planning, and practical self-guided care.
-            These products can be used independently or paired with a professional consultation when you want deeper support.
+            The tools on this site are self-guided; completing one does not send your information to Morrowplate or include a professional review.
+            No product payment is processed here. Contact Morrowplate to confirm current price, what's included, and delivery before arranging a paid product.
           </p>
         </div>
 
@@ -145,8 +151,8 @@
                 <span class="pill">Free self-service tool</span>
                 <h2>BMI calculator</h2>
                 <p>
-                  A simple screening tool to estimate your body mass index and give a general sense of weight range.
-                  This supports early reflection and helps you decide if deeper nutrition support may be useful.
+                  A free, adult-only screening tool based on height and weight. BMI is not a diagnosis or a measure of body composition,
+                  and is not intended for children, teens, or pregnancy.
                 </p>
                 <div class="product-meta">
                   <span>Best for</span>
@@ -225,7 +231,8 @@
               </div>
 
               <div class="recall-layout">
-                <form class="recall-form" action="#" method="post">
+                <div class="recall-form">
+                  <p><strong>Private worksheet:</strong> Answers are not sent to Morrowplate; they remain on this page until you close or reload it. Print or save a copy as a PDF; avoid entering sensitive details on a shared device.</p>
                   <h3>Section 1: Session information</h3>
 
                   <div class="form-grid two-col">
@@ -348,9 +355,9 @@
                   </div>
 
                   <div class="cta-row">
-                    <button class="button button-primary" type="submit">Submit recall</button>
+                    <button class="button button-primary" id="printRecallPreview" type="button">Print or save as PDF</button>
                   </div>
-                </form>
+                </div>
 
                 <aside class="portion-guide" aria-label="Portion size estimation guide">
                   <h3>Portion-size guide</h3>
@@ -435,7 +442,16 @@
       if (recallDate) {
         const yesterday = new Date();
         yesterday.setDate(yesterday.getDate() - 1);
-        recallDate.value = yesterday.toISOString().split('T')[0];
+        recallDate.value = [
+          yesterday.getFullYear(),
+          String(yesterday.getMonth() + 1).padStart(2, '0'),
+          String(yesterday.getDate()).padStart(2, '0')
+        ].join('-');
+      }
+
+      const printRecallPreview = document.getElementById('printRecallPreview');
+      if (printRecallPreview) {
+        printRecallPreview.addEventListener('click', () => window.print());
       }
     </script>
   </body>
